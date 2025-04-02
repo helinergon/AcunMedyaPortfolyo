@@ -1,0 +1,42 @@
+﻿@model List<AcunMedyaPortfolyo.Models.Tbl_Testimonial>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Bu Bir Testimonial Sayfasıdır</h2>
+
+<div class="Container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>TestimonialID</th>
+                <th>Description1</th>
+                <th>TestimonialName</th>
+                <th>Description2</th>
+                <th>ImageUrl</th>
+                <th>Title</th>
+                <th>Güncelle</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TestimonialID</td>
+                <td>@item.Descripion1</td>
+                <td>@item.TestimonialName</td>
+                <td>@item.Description2</td>
+                <td>@item.ImageUrl</td>
+                <td>@item.Title</td>
+                <td><a href="#" class="btn btn-danger">Güncelle</a></td>
+                <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-dark">Sil</a></td>
+
+            </tr>
+        }
+
+    </table>
+</div>
+<a href="/Testimonial/CreateTestimonial/" class="btn btn-danger">Oluştur</a>
