@@ -14,6 +14,7 @@ namespace AcunMedyaPortfolyo.Controllers
         public ActionResult Index()
         {
             var values = db.Tbl_Slider.ToList();
+
             return View(values);
         }
         public ActionResult DeleteSlider(int id)
