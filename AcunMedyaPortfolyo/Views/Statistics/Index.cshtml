@@ -1,8 +1,61 @@
 ﻿
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
 }
-
-<h2>Burası İstatistik Sayfası</h2>
-
-
+<h1>Ana Sayfa</h1><br />
+<div class="col-lg-3 col-sm-6">
+    <table class="border-3">
+        <tr>
+            <td>
+                <div class="card gradient-1" style="background-color:blueviolet; height:200px; width:280px;">
+                    <div class="card-body">
+                        <h3 class="card-title text-white">Kategori Sayısı</h3>
+                        <div class="d-inline-block">
+                            <h2 class="text-white">@ViewBag.CategoryCount</h2>
+                            <p class="text-white mb-0">Kategoriler</p>
+                        </div>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="card gradient-1" style="background-color: dodgerblue; height: 200px; width: 280px;">
+                    <div class="card-body">
+                        <h3 class="card-title text-white">Proje Sayısı</h3>
+                        <div class="d-inline-block">
+                            <h2 class="text-white">@ViewBag.ProjectCount</h2>
+                            <p class="text-white mb-0">Projeler</p>
+                        </div>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-terminal"></i></span>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="card gradient-1" style="background-color: mediumspringgreen; height: 200px; width: 280px;">
+                    <div class="card-body">
+                        <h3 class="card-title text-white">Mesaj Sayısı</h3>
+                        <div class="d-inline-block">
+                            <h2 class="text-white">@ViewBag.ContactCount</h2>
+                            <p class="text-white mb-0">Mesajlar</p>
+                        </div>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-comment-o"></i></span>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="card gradient-1" style="background-color: darkorange; height: 200px; width: 280px;">
+                    <div class="card-body">
+                        <h3 class="card-title text-white">Referans Sayısı</h3>
+                        <div class="d-inline-block">
+                            <h2 class="text-white">@ViewBag.TestimonialCount</h2>
+                            <p class="text-white mb-0">Referanslar</p>
+                        </div>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+@*Mesajlar kısmını da buraya çekip burayı ana sayfa yaparsın*@
