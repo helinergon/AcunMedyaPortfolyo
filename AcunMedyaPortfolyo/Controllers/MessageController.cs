@@ -9,7 +9,7 @@ namespace AcunMedyaPortfolyo.Controllers
 {
     public class MessageController : Controller
     {
-        DbAcunMedyaProject1Entities db = new DbAcunMedyaProject1Entities();
+        DbAcunMedyaProject1Entities1 db = new DbAcunMedyaProject1Entities1();
         // GET: Message
         public ActionResult Index()
         {
@@ -36,6 +36,25 @@ namespace AcunMedyaPortfolyo.Controllers
             db.Tbl_Message.Add(message);
             db.SaveChanges();
             return RedirectToAction("index");
+        }
+        [HttpGet]
+        public ActionResult UpdateMessage(int id)
+        {
+            var values = db.Tbl_Message.Find(id);
+            return View(values);
+
+        }
+        [HttpPost]
+        public ActionResult UpdateMessage(Tbl_Message model)
+        {
+            var value = db.Tbl_Message.Find(model.MessageID);
+            value.NameSurname = model.NameSurname;
+            value.Mail = model.Mail;
+            value.Subject = model.Subject;
+            value.MessageContent = model.MessageContent;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
         }
     }
 }

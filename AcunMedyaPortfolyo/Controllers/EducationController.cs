@@ -9,7 +9,7 @@ namespace AcunMedyaPortfolyo.Controllers
 {
     public class EducationController : Controller
     {
-        DbAcunMedyaProject1Entities db = new DbAcunMedyaProject1Entities();
+        DbAcunMedyaProject1Entities1 db = new DbAcunMedyaProject1Entities1();
         // GET: Education
         public ActionResult Index()
         {
@@ -36,6 +36,26 @@ namespace AcunMedyaPortfolyo.Controllers
             db.Tbl_Education.Add(education);
             db.SaveChanges();
             return RedirectToAction("index");
+        }
+        [HttpGet]
+        public ActionResult UpdateEducation(int id)
+        {
+            var values = db.Tbl_Education.Find(id);
+            return View(values);
+
+        }
+        [HttpPost]
+        public ActionResult UpdateEducation(Tbl_Education model)
+        {
+            var value = db.Tbl_Education.Find(model.EducationID);
+            value.StartYear = model.StartYear;
+            value.EndYear = model.EndYear;
+            value.Name = model.Name;
+            value.Description = model.Description;
+            value.Section = model.Section;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
         }
     }
 }

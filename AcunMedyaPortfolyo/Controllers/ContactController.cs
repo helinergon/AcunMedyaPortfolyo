@@ -10,7 +10,7 @@ namespace AcunMedyaPortfolyo.Controllers
     public class ContactController : Controller
     {
         // GET: Contact
-        DbAcunMedyaProject1Entities db = new DbAcunMedyaProject1Entities();
+        DbAcunMedyaProject1Entities1 db = new DbAcunMedyaProject1Entities1();
         public ActionResult Index()
         {
             var values = db.Tbl_Contact.ToList();
@@ -37,6 +37,26 @@ namespace AcunMedyaPortfolyo.Controllers
             db.Tbl_Contact.Add(contact);
             db.SaveChanges();
             return RedirectToAction("index");
+        }
+
+        [HttpGet]
+        public ActionResult UpdateContact(int id)
+        {
+            var values = db.Tbl_Contact.Find(id);
+            return View(values);
+
+        }
+        [HttpPost]
+        public ActionResult UpdateContact(Tbl_Contact model)
+        {
+            var value = db.Tbl_Contact.Find(model.ContactID);
+            value.Description = model.Description;
+            value.Adress = model.Adress;
+            value.Email= model.Email;
+            value.Phone = model.Phone;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
         }
     }
 }

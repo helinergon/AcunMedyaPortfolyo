@@ -11,7 +11,7 @@ namespace AcunMedyaPortfolyo.Controllers
     public class CategoryController : Controller
     {
         // GET: Category
-        DbAcunMedyaProject1Entities db = new DbAcunMedyaProject1Entities();
+        DbAcunMedyaProject1Entities1 db = new DbAcunMedyaProject1Entities1();
         public ActionResult Index()
         {
             var values = db.Tbl_Category.ToList();
@@ -39,11 +39,22 @@ namespace AcunMedyaPortfolyo.Controllers
         }
 
 
-        public ActionResult UpdateCategory(int ID)
+        [HttpGet]
+        public ActionResult UpdateCategory(int id)
         {
-            var values = db.Tbl_Category.Find(ID);
+            var values = db.Tbl_Category.Find(id);
             return View(values);
 
         }
+        [HttpPost]
+        public ActionResult UpdateCategory(Tbl_Category model)
+        {
+            var value = db.Tbl_Category.Find(model.CategoryID);
+            value.CategoryName=model.CategoryName;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+
     }
 }

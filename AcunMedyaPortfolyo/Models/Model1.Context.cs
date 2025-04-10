@@ -13,10 +13,10 @@ namespace AcunMedyaPortfolyo.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DbAcunMedyaProject1Entities : DbContext
+    public partial class DbAcunMedyaProject1Entities1 : DbContext
     {
-        public DbAcunMedyaProject1Entities()
-            : base("name=DbAcunMedyaProject1Entities")
+        public DbAcunMedyaProject1Entities1()
+            : base("name=DbAcunMedyaProject1Entities1")
         {
         }
     

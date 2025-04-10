@@ -1,0 +1,48 @@
+﻿@model AcunMedyaPortfolyo.Models.Tbl_Abaut
+@{
+    ViewBag.Title = "UpdateAbout";
+}
+
+<h2>About Güncelleme Sayfası</h2>
+<form method="post">
+    @Html.HiddenFor(x => x.AbautID)
+    <br />
+    <label> ImageURL</label>
+    @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+    <br />
+    <label>Contact Title</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Contact BirthDay</label>
+    @Html.TextBoxFor(x => x.BirthDay, new { @class = "form-control" })
+    <br />
+    <label>Contact WebSite</label>
+    @Html.TextBoxFor(x => x.WebSite, new { @class = "form-control" })
+    <br />
+    <label>Contact Phone</label>
+    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+    <br />
+    <label>Contact City</label>
+    @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+    <br />
+    <label>Contact Age</label>
+    @Html.TextBoxFor(x => x.Age, new { @class = "form-control" })
+    <br />
+    <label>Contact Email</label>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    <label>Contact FreeLance</label>
+    @Html.TextBoxFor(x => x.FreeLance, new { @class = "form-control" })
+    <br />
+    <label>Contact Description1</label>
+    @Html.TextBoxFor(x => x.Description1, new { @class = "form-control" })
+    <br />
+    <label>Contact Description2</label>
+    @Html.TextBoxFor(x => x.Description2, new { @class = "form-control" })
+    <br />
+    <label>Contact Degree</label>
+    @Html.TextBoxFor(x => x.Degree, new { @class = "form-control" })
+    <br />
+    <button>Güncelle</button>
+
+</form>

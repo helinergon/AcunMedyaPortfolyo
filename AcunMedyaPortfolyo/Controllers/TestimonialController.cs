@@ -9,7 +9,7 @@ namespace AcunMedyaPortfolyo.Controllers
 {
     public class TestimonialController : Controller
     {
-        DbAcunMedyaProject1Entities db = new DbAcunMedyaProject1Entities();
+        DbAcunMedyaProject1Entities1 db = new DbAcunMedyaProject1Entities1  ();
         // GET: Testimonial
         public ActionResult Index()
         {
@@ -36,6 +36,28 @@ namespace AcunMedyaPortfolyo.Controllers
             db.Tbl_Testimonial.Add(testimonial);
             db.SaveChanges();
             return RedirectToAction("index");
+        }
+
+
+        [HttpGet]
+        public ActionResult UpdateTestimonial(int id)
+        {
+            var values = db.Tbl_Testimonial.Find(id);
+            return View(values);
+
+        }
+        [HttpPost]
+        public ActionResult UpdateTestimonial(Tbl_Testimonial model)
+        {
+            var value = db.Tbl_Testimonial.Find(model.TestimonialID);
+            value.TestimonialName = model.TestimonialName;
+            value.Descripion1 = model.Descripion1;
+            value.ImageUrl=model.ImageUrl;
+            value.Title = model.Title;
+            value.Description2 = model.Description2;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
         }
     }
 }

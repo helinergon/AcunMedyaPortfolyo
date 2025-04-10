@@ -9,7 +9,7 @@ namespace AcunMedyaPortfolyo.Controllers
 {
     public class JobController : Controller
     {
-        DbAcunMedyaProject1Entities db = new DbAcunMedyaProject1Entities();
+        DbAcunMedyaProject1Entities1 db = new DbAcunMedyaProject1Entities1();
         // GET: Job
         public ActionResult Index()
         {
@@ -36,6 +36,26 @@ namespace AcunMedyaPortfolyo.Controllers
             db.Tbl_Job.Add(job);
             db.SaveChanges();
             return RedirectToAction("index");
+        }
+        [HttpGet]
+        public ActionResult UpdateJob(int id)
+        {
+            var values = db.Tbl_Job.Find(id);
+            return View(values);
+
+        }
+        [HttpPost]
+        public ActionResult UpdateJob(Tbl_Job model)
+        {
+            var value = db.Tbl_Job.Find(model.JobID);
+            value.Title = model.Title;
+            value.StartDate = model.StartDate;
+            value.EndDate = model.EndDate;
+            value.CompanyName = model.CompanyName;
+            value.Description = model.Description;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
         }
     }
 }

@@ -261,7 +261,7 @@
           <Property Name="ImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="DbAcunMedyaProject1Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DbAcunMedyaProject1Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Tbl_Abaut" EntityType="Self.Tbl_Abaut" />
           <EntitySet Name="Tbl_Category" EntityType="Self.Tbl_Category" />
           <EntitySet Name="Tbl_Contact" EntityType="Self.Tbl_Contact" />
@@ -279,7 +279,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DbAcunMedyaProject1ModelStoreContainer" CdmEntityContainer="DbAcunMedyaProject1Entities">
+        <EntityContainerMapping StorageEntityContainer="DbAcunMedyaProject1ModelStoreContainer" CdmEntityContainer="DbAcunMedyaProject1Entities1">
           <EntitySetMapping Name="Tbl_Abaut">
             <EntityTypeMapping TypeName="DbAcunMedyaProject1Model.Tbl_Abaut">
               <MappingFragment StoreEntitySet="Tbl_Abaut">

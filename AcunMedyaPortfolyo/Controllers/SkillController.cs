@@ -9,7 +9,7 @@ namespace AcunMedyaPortfolyo.Controllers
 {
     public class SkillController : Controller
     {
-        DbAcunMedyaProject1Entities db = new DbAcunMedyaProject1Entities();
+        DbAcunMedyaProject1Entities1 db = new DbAcunMedyaProject1Entities1  ();
         // GET: Skill
         public ActionResult Index()
         {
@@ -36,6 +36,24 @@ namespace AcunMedyaPortfolyo.Controllers
             db.Tbl_Skill.Add(skill);
             db.SaveChanges();
             return RedirectToAction("index");
+        }
+        [HttpGet]
+        public ActionResult UpdateSkill(int id)
+        {
+            var values = db.Tbl_Skill.Find(id);
+            return View(values);
+
+        }
+        [HttpPost]
+        public ActionResult UpdateSkill(Tbl_Skill model)
+        {
+            var value = db.Tbl_Skill.Find(model.SkillID);
+            value.SkillName = model.SkillName;
+            value.Derece = model.Derece;
+            value.Description = model.Description;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
         }
     }
 }

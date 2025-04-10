@@ -1,0 +1,24 @@
+﻿@model AcunMedyaPortfolyo.Models.Tbl_Message
+@{
+    ViewBag.Title = "UpdateMessage";
+}
+
+<h2>Mesaj Güncelleme Sayfası</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.MessageID)
+    <br />
+    <label> Mesaj Yazanın Adı Soyadı</label>
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+    <label>Mail Adresi</label>
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+    <label>Bölümü</label>
+    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+    <br />
+    <label>Mesaj İçeriği</label>
+    @Html.TextBoxFor(x => x.MessageContent, new { @class = "form-control" })
+    <br />
+    <button>Güncelle</button>
+</form>
