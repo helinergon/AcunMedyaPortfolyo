@@ -1,0 +1,34 @@
+﻿@model List<AcunMedyaPortfolyo.Models.Tbl_Skill>
+<section style="background-color:pink" id="team" class="skills section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2 style="font-size: 25px; color:purple;">Skills</h2>
+        <p style="font-size: 15px; color:deeppink;">I am knowledgeable about problem solving and algorithms. I do my best to improve myself.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row skills-content skills-animation">
+
+            <div class="col-lg-6">
+                @foreach (var item in Model)
+                {
+
+                    <div class="progress" style="color:deeppink">
+                        <span class="skill" style="color:deeppink"><span>@item.SkillName</span> <i class="val">@item.Derece</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="@item.Derece" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                }
+    <!-- End Skills Item -->
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

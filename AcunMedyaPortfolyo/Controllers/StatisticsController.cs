@@ -16,6 +16,11 @@ namespace AcunMedyaPortfolyo.Controllers
             ViewBag.ProjectCount = db.Tbl_Project.Count();
             ViewBag.ContactCount = db.Tbl_Contact.Count();
             ViewBag.TestimonialCount = db.Tbl_Testimonial.Count();
+            ViewBag.SkillCount = db.Tbl_Skill.Count();
+            ViewBag.EducationCount= db.Tbl_Education.Count();
+            ViewBag.JobCount = db.Tbl_Job.Count();
+            ViewBag.ServicesCount= db.Tbl_Services.Count();
+
             return View();
         }
     }

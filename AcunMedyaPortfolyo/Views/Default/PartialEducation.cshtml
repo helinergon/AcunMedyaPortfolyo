@@ -1,0 +1,20 @@
+﻿@model List<AcunMedyaPortfolyo.Models.Tbl_Education>
+<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+    <h3 class="resume-title" style="font-size: 25px; color:purple;">Education</h3>
+    @foreach (var item in Model)
+    {
+        <div class="resume-item pb-0">
+            <h4>@item.Section</h4>
+            <p><em>@item.Description</em></p>
+            <ul>
+                <li>Bursa Uludag University</li>
+                <li>@item.StartYear</li>
+                <li>@item.EndYear</li>
+            </ul>
+        </div><!-- Edn Resume Item -->
+
+    }
+
+
+</div>
+
